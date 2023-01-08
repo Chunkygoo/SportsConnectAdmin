@@ -58,6 +58,14 @@ let app = require('express')();
   }
 })();
 
-// app.get('*', (req, res) => {
-//   res.send('All other routes');
-// });
+app.get('*', async (req, res) => {
+  try {
+    const { Noco } = require('nocodb-daily');
+    const httpServer = app.listen(process.env.PORT || 8080);
+    app.use(await Noco.init({}, httpServer, app));
+    module.exports = app;
+  } catch (e) {
+    console.log(e);
+  }
+  res.send('All other routes');
+});
