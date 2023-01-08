@@ -52,13 +52,12 @@ let app = require('express')();
     const { Noco } = require('nocodb-daily');
     const httpServer = app.listen(process.env.PORT || 8080);
     app.use(await Noco.init({}, httpServer, app));
+    module.exports = app;
   } catch (e) {
     console.log(e);
   }
 })();
 
-app.get('*', (req, res) => {
-  res.send('All other routes');
-});
-
-module.exports = app;
+// app.get('*', (req, res) => {
+//   res.send('All other routes');
+// });
