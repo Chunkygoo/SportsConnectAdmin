@@ -39,7 +39,7 @@ const httpServer = app.listen(PORT, () => {
 
 app.use(async function (req, res, next) {
   try {
-    const { Noco } = require('nocodb');
+    const { Noco } = require('nocodb-daily');
     await Noco.init({}, httpServer, app);
     next();
   } catch (error) {
