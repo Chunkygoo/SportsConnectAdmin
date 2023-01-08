@@ -1,16 +1,16 @@
 // let app = require('express')();
-const { Noco } = require('nocodb-daily');
+// const { Noco } = require('nocodb-daily');
 // // const { Noco } = require('nocodb');
 
-// (async () => {
-//   try {
-//     const { Noco } = require('nocodb-daily');
-//     const httpServer = app.listen(process.env.PORT || 8080);
-//     app.use(await Noco.init({}, httpServer, app));
-//   } catch (e) {
-//     console.log(e);
-//   }
-// })();
+(async () => {
+  try {
+    const { Noco } = require('nocodb-daily');
+    const httpServer = app.listen(process.env.PORT || 8080);
+    app.use(await Noco.init({}, httpServer, app));
+  } catch (e) {
+    console.log(e);
+  }
+})();
 
 // const httpServer = app.listen(process.env.PORT || 8080);
 
@@ -29,7 +29,7 @@ const { Noco } = require('nocodb-daily');
 
 // module.exports = app;
 
-let app = require('express')();
+// let app = require('express')();
 
 // const PORT = 8080;
 
@@ -57,14 +57,14 @@ let app = require('express')();
 //   }
 // })();
 
-(async () => {
-  try {
-    const httpServer = app.listen(process.env.PORT || 8080);
-    app.use(await Noco.init({}, httpServer, app));
-  } catch (e) {
-    console.log(e);
-  }
-})();
+// (async () => {
+//   try {
+//     const httpServer = app.listen(process.env.PORT || 8080);
+//     app.use(await Noco.init({}, httpServer, app));
+//   } catch (e) {
+//     console.log(e);
+//   }
+// })();
 
 // app.get('*', async (req, res) => {
 //   // try {
@@ -76,4 +76,4 @@ let app = require('express')();
 //   res.send('All other routes');
 // });
 
-module.exports = app;
+// module.exports = app;
